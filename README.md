@@ -1,5 +1,7 @@
 # simple poc for using socket.io for  demo purposes
 
+![Overall picture](demomittaus.png)
+
 Certainly ugly
 
 We have redis and 2 servers app A and appB (appa and appb) running socket.io library and
