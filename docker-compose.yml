@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - 8080:8080
+    links:
+      - appa
+      - appb
+  redis:
+    image: redis
+    expose:
+      - 6379
+  listener:
+    build: ./listener
+    ports:
+      - 3000:3000
+  appa:
+    build: ./app
+    links:
+      - redis
+    ports:
+      - 8000:8000
+    environment:
+      - NODE_ENV=development
+      - SERVERPORT=8000
+  appb:
+    build: ./app
+    links:
+      - redis
+    ports:
+      - 9000:9000
+    environment:
+      - NODE_ENV=development
+      - SERVERPORT=9000
