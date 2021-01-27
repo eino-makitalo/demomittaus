@@ -6,7 +6,9 @@ var cors = require('cors');
 const http = require('http').Server(app);
 const io = require('socket.io')(http,{
     cors: {
-        origin: ["http://localhost:3000","http://localhost:8080"],
+        origin: ["http://localhost:3000","http://localhost:8080","http://localhost:8000","http://localhost:9000",
+        "http://demomittaus.fi:3000","http://demomittaus.fi:8080","http://demomittaus.fi:8000","http://demomittaus.fi:9000",
+        "https://demomittaus.fi"]
       }
 });
 const redis = require('socket.io-redis');
