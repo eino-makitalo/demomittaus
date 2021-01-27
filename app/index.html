@@ -69,8 +69,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         const token = "123";
-        var socket = io.connect('http://localhost:8000', {
+        var socket = io.connect( 'wss://demomittaus.fi', {
             query: { token }
+            
         });
 
         var messages = document.getElementById('messages');

@@ -17,7 +17,8 @@ function App() {
       socket.close();
       setSocket({})
     }
-    const s1 = socketIOClient(`http://localhost:${serverport}`, {
+    const address = (serverport === "443") ? 'wss://demomittaus.fi':`ws://demomittaus.fi:${serverport}`
+    const s1 = socketIOClient(address, {
             query: { token: device }
         });
     setSocket(s1)
@@ -44,9 +45,10 @@ function App() {
           value={serverport}
           onChange={e => setServerport(e.target.value)}          
         >
-          <option value="8000">express 8000</option>
-          <option value="9000">express 9000</option>
-          <option value="8080">nginx LB 8080</option>
+          <option value="8000">http/ws (non secure) app A port 8000</option>
+          <option value="9000">http/ws (non secure) app B port 9000</option>
+          <option value="8080">http/nginx load balancher port 8080</option>
+          <option value="443">http/2 (firefox) wss on port 443</option>
           </select>
       </label>
       <input type="submit" value="Connect" />
