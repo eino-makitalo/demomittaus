@@ -19,11 +19,11 @@ React client you can also select which device ID you connect.  (html clients is 
 
 You can send messages "from devices" by connecting
 
-`POST https://localhost:443/status/:deviceid`  or port 9000 or 443 (https)
+`POST https://demomittaus.fi:443/status/:deviceid`  or port 9000 or 443 (https)
 with curl or insomnia or some other rest client
 
 ```
-POST https://localhost:443/status/123
+POST https://demomittaus.fi:443/status/123
 {
     "noicelevel": 123,
     "whateverdata":"data"
@@ -35,7 +35,7 @@ POST https://localhost:443/status/123
 
 `docker-compose up`
 
-open browser on http://localhost:3000 (react client) or through load balancher https://localhost:443, which opens either app A or app B simplme html client listening device 123 
+open browser on http://demomittaus.fi:3000 (react client) or through load balancher https://demomittaus.fi:443, which opens either app A or app B simplme html client listening device 123 
 
 With react client you can choose what ever "device" (aka channel) you like.
 
